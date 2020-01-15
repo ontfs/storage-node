@@ -1,7 +1,0 @@
-版本：v0.6.0
-   ontfs-linux:
-     md5:3b7f7a14bd0b4ef12b52cd10882171d4
-     sha1:998ee51a7be1faeaa35ed95dd6a17fe3098c619f8ae4b158848377f5dc84357f
-   ontfs-darwin:
-     md5:7f86487807eeae7991fe7cbd5aa10dde
-     sha1:365094c74a23b31611b7d1af6f6b7b051683b516a33b22267f8e3ea5d238ebf1
