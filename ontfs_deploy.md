@@ -189,13 +189,13 @@ func main() {
 
    需要改的地方已经作了说明。请注意代码注释。
 ## ontfs server的部署
+
 ### 启动ontfs server
     同样需要钱包，以同样的方式生成即可。
 
-    ```
-    ./ontfs  --listenaddr="172.1.2.3:1990"  --wallet ./wallet.dat --password xxxx --rpcaddr http://chainaddr:20336  --networkid 7 --maxstorage 450G --loglevel 1 --rpcport 1989 --mappingaddr "eip:1990" --pdpcircuit "./circuit"
-    ```
-
+```
+./ontfs  --listenaddr="172.1.2.3:1990"  --wallet ./wallet.dat --password xxxx --rpcaddr http://chainaddr:20336  --networkid 7 --maxstorage 450G --loglevel 1 --rpcport 1989 --mappingaddr "eip:1990" --pdpcircuit "./circuit"
+ ```
 
     1. listenaddr: 本地监听地址，一般是网卡上看到的地址，公有云场景就是vpc地址
     2. rpcaddr: 指向链的rpc地址
@@ -211,7 +211,7 @@ func main() {
 
 ### 检查
 
-        ```
+```
 ./ontfs node query --nodeaddr=ANFKBU1YuAF5AyAiAryAqYD7pwjUiRTA7Z --rpcport=1989
 {
    "Pledge": 471859200,
@@ -223,7 +223,7 @@ func main() {
    "NodeAddr": "ANFKBU1YuAF5AyAiAryAqYD7pwjUiRTA7Z",
    "NodeNetAddr": "107.150.112.175:1990"
 }
-        ```
+```
 
 ## onfs client的启动
    同样需要钱包，请以同样方式启动。
