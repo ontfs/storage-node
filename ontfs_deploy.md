@@ -196,6 +196,7 @@ func main() {
     ./ontfs  --listenaddr="172.1.2.3:1990"  --wallet ./wallet.dat --password xxxx --rpcaddr http://chainaddr:20336  --networkid 7 --maxstorage 450G --loglevel 1 --rpcport 1989 --mappingaddr "eip:1990" --pdpcircuit "./circuit"
     ```
 
+
     1. listenaddr: 本地监听地址，一般是网卡上看到的地址，公有云场景就是vpc地址
     2. rpcaddr: 指向链的rpc地址
     3. mappingaddr: 公有云场景的eip地址
@@ -229,6 +230,8 @@ func main() {
 ### 启动client
     ontfs-client 同级目录下需要`config.json` `sdk_config.json` ,分别如下：
 
+    config.json
+
     ```
     {
         "DBPath": "./Sdk/DB",
@@ -240,6 +243,7 @@ func main() {
     }
     ```
 
+    sdk_config:
 
     ```
     {
