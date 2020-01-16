@@ -8,11 +8,14 @@
 ## 链的部署以及ong充值
 ### 链的部署
    Ontology测试链需要准备七个钱包。启动七个实例。生成钱包的命令如下：
+
    ```
    ./ontology account add -d
    # 提示需要输入密码，两次重复输入即可
    ```
+
    这样操作分别生成7个钱包。7个钱包的address以及pubkey对应更新到`config.json`中去。示例配置如下：
+
    ```
 {
   "VBFT": {
@@ -85,16 +88,20 @@
   ]
 }
    ```
+
    `config.json`中的SeedList需要改成对应的启动位置的内网IP。
 
    启动命令：
+
    ```
    ./ontology --disable-tx-pool-pre-exec --config=config.json --reserved-file=./peers.rsv --reserved-only --wallet wallet.dat --enable-consensus --max-tx-in-block 1000  --networkid 7 --gasprice 0 --rest
    ```
+
    `networkid` 0代表主要 1代表测试网，只要选择跟他们不同即可。这里我们选择7
    每台这样启动后检测对应的终端输出看是否有error log 以及高度是否在增长。预期是没有错误日志以及高度正常增加。
 ### ong充值
    上传文件需要一定的ong消耗，所以需要给server冲一点ong，示例代码如下：
+
    ```
 package main
 
@@ -179,24 +186,30 @@ func main() {
     wp.Transfer(targetAddress, 5000*1e9)
 }
    ```
+
    需要改的地方已经作了说明。请注意代码注释。
 ## ontfs server的部署
 ### 启动ontfs server
     同样需要钱包，以同样的方式生成即可。
+
     ```
     ./ontfs  --listenaddr="172.1.2.3:1990"  --wallet ./wallet.dat --password xxxx --rpcaddr http://chainaddr:20336  --networkid 7 --maxstorage 450G --loglevel 1 --rpcport 1989 --mappingaddr "eip:1990" --pdpcircuit "./circuit"
     ```
+
     1. listenaddr: 本地监听地址，一般是网卡上看到的地址，公有云场景就是vpc地址
     2. rpcaddr: 指向链的rpc地址
     3. mappingaddr: 公有云场景的eip地址
     4. circuit: pdp证明文件 [这里](https://pan.baidu.com/s/1n44MtD2qzKdBtrK4ku99ig)下载， 提取码：ucsz
 ### 注册
+
    ```
    ./ontfs node register --nodenetaddr="107.150.112.175:1990" --volume=450G --servicetime="2029-12-15 12:00:00" --rpcport=1989
    ```
+
    这里注册的地址是选择的是eip地址
 
 ### 检查
+
         ```
 ./ontfs node query --nodeaddr=ANFKBU1YuAF5AyAiAryAqYD7pwjUiRTA7Z --rpcport=1989
 {
@@ -210,10 +223,12 @@ func main() {
    "NodeNetAddr": "107.150.112.175:1990"
 }
         ```
+
 ## onfs client的启动
    同样需要钱包，请以同样方式启动。
 ### 启动client
     ontfs-client 同级目录下需要`config.json` `sdk_config.json` ,分别如下：
+
     ```
     {
         "DBPath": "./Sdk/DB",
@@ -224,6 +239,8 @@ func main() {
         "DisableStdLog": false
     }
     ```
+
+
     ```
     {
         "DBPath": "./Sdk/DB",
@@ -234,22 +251,32 @@ func main() {
         "DisableStdLog": false
     }
     ```
+
+
+
     启动client命令：
+
     ```
     ./ontfs-client
     ```
+
 ### 启动service
+
 ```
 ./ontfs-client service start
 ```
+
 ## 上传下载检测
 ### 上传
+
 ```
 ./ontfs-client file upload --filePath "./testfile" --desc "testfile" --timeExpired "2020-12-14 10:20:00" --copyNum 1 --storeType 1 --encrypt=true --encryptPwd "xxxx"
 ```
+
     1. copyNum: 上传文件在后端的副本数，和ontfs server的数量相关
     2. storeType: 0 空间租户模式 1 文件模式
     上传成功终端会给出文件hash，样例输出如下：
+
     ```
     {
    "Tx": "9e14f0d54971a103ea1c20e0cc0d7984377432a55e0bc106bc54687e6d895393",
@@ -258,8 +285,11 @@ func main() {
 }
 
     ```
+
 ### 下载
+
 ```
 ./ontfs-client file download --fileHash=SeNKCjaenP7nGsQ453v6JsU5M9piMd5CYSDbKuMVjcYVkubG  --maxPeerCnt=2 --decryptPwd="xxxx" --inorder=true --outFilePath ./dl
 ```
+
     下载成功会将文件下载到制定地方，这里是 `ontfs-client` 所在目录的`dl` 文件。可以通过计算sha1sum比对文件是否一致。
