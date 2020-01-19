@@ -3,7 +3,7 @@
 
 ### 1.部署示意图
 
-![](./img/ontfs-flow.png)
+![](./img/ontfs-flow-en.jpeg)
 
 
 ### 2.角色：
@@ -23,37 +23,21 @@
 
 二、OntFs系统模块交互原理
 ===
-![](./img/internal-module.png)
+![](./img/internal-module-en.jpeg)
 
 
 三、OntFs文件操作交互流程
 ===
 ### 1.上传文件交互:
 
-![](./img/fileupload.png)
+![](./img/fileupload-en.jpeg)
 
 ---
 ### 2.下载文件交互:
 
-![](./img/filedownload.png)
+![](./img/filedownload-en.jpeg)
 
 ---
 ### 3.删除文件交互:
 
-![](./img/filedelete.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![](./img/filedelete-en.jpeg)
