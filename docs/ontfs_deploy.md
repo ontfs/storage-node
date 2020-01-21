@@ -204,7 +204,7 @@ func main() {
 
 2. rpcaddr: 指向链的rpc地址
 3. mappingaddr: 公有云场景的eip地址
-4. circuit: pdp证明文件 [这里](https://pan.baidu.com/s/1n44MtD2qzKdBtrK4ku99ig)下载， 提取码：ucsz
+4. circuit: pdp证明文件 [这里](https://pan.baidu.com/s/14XfS58V-wGpoDQZjC8nOAg)下载， 提取码：5g7g
 
 
 
