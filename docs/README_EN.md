@@ -41,9 +41,5 @@ ONTFS is a distributed storage infrastructure based on the Ontology blockchain p
 
 #### Cross-platform Development Suite:
 
-1. Client side application development is facilitated by providing cross-platform client SDKs.
-2. Storage service provider application development is facilitated by providing storage server SDK.
-
-## Storage node
-
-// TODO
+1. Client side application development is facilitated by providing a cross-platform client SDK.
+2. Storage service provider application development is facilitated by providing a storage server SDK.
