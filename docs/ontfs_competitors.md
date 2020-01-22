@@ -1,14 +1,14 @@
 我们在此引入了几个常见的存储项目，并对各自的一些特性做了对比。见下表
 
 
-存储项目    | 共识机制           |  存储证明算法      |   挑战者                       |  节点      | 容量  |
--|-|-|-|-|-
-OntFS       | VBFT               | 零知识证明     |  无，结合VRF，定期自动提交证明 | 可无限加入 |无上限，随节点加入而增加 |
-Storj       | 无                 | Merkle tree    |  有 |  20k |  30PB+ |
-Genero      | POS                | SPoR           |  有 |  /     |  /  |
-Sia         | POW                | PoR            |  有 |   1k  |   4PB+ |
-MaidSAFE    | Proof of Rresource | 零知识证明     |  有 |  /    |   /  |
-FileCoin    | POS+POW            | PoST + PoRep   |  有 |  /     |  /  |
+| 存储项目 | 共识机制           | 存储证明算法 | 挑战者                        | 节点       | 容量                     |
+| -------- | ------------------ | ------------ | ----------------------------- | ---------- |
+| OntFS    | VBFT               | 零知识证明   | 无，结合VRF，定期自动提交证明 | 可无限加入 | 无上限，随节点加入而增加 |
+| Storj    | 无                 | Merkle tree  | 有                            | 20k        | 30PB+                    |
+| Genero   | POS                | SPoR         | 有                            | /          | /                        |
+| Sia      | POW                | PoR          | 有                            | 1k         | 4PB+                     |
+| MaidSAFE | Proof of Rresource | 零知识证明   | 有                            | /          | /                        |
+| FileCoin | POS+POW            | PoST + PoRep | 有                            | /          | /                        |
 
 * 在共识机制上ontfs采用了vbft算法，具有最快的链上交易处理速度
 * 存储证明算法使用零知识证明算法，目前尚无发现可以伪造使用零知识计算的存储证明，而Merkle tree 容易被存储节点使用文件块hash替换源数据伪造存储证明
